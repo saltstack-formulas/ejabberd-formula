@@ -1,8 +1,6 @@
 ejabberd:
-  pkg:
-    - installed
-  service:
-    - running
+  pkg.installed: []
+  service.running:
     - enable: True
     - watch:
       - pkg: ejabberd
@@ -10,8 +8,7 @@ ejabberd:
     - present
 
 ejabberd.yml:
-  file:
-    - managed
+  file.managed:
     - name: /etc/ejabberd/ejabberd.yml
     - source: salt://ejabberd/ejabberd.yml
     - user: root
